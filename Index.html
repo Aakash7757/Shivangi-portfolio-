@@ -1,5 +1,4 @@
 <!doctype html>
-
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -7,21 +6,27 @@
   <title>Shivangi Singh – Portfolio</title>
   <meta name="description" content="Portfolio of Shivangi Singh – Process Associate specializing in Trust & Safety, CRM, and Process Optimization." />
   <style>
+    /* Avatar (Profile photo) */
     .avatar {
-  width: 100px;       /* bigger, so photo looks clear */
-  height: 100px;
-  border-radius: 50%; /* makes it a circle */
-  overflow: hidden;
-  display: inline-block;
-  flex-shrink: 0;
-}
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    @media (max-width: 600px) {
+      .avatar {
+        width: 72px;
+        height: 72px;
+      }
+    }
 
-.avatar img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%; /* keeps image inside circle */
-  object-fit: cover;  /* crop image nicely */
-}
     :root{
       --bg: #0b0d10;
       --panel: #12161b;
@@ -44,67 +49,67 @@
     a:hover{text-decoration:underline}
     .container{max-width:1080px;margin-inline:auto;padding:24px}
     header{position:sticky;top:0;z-index:40;background:linear-gradient(180deg,rgba(11,13,16,.9),rgba(11,13,16,.6) 70%,transparent);backdrop-filter:saturate(140%) blur(8px)}
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;row-gap:12px}
     .brand{display:flex;align-items:center;gap:12px}
-    .avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--brand),var(--brand-2));display:grid;place-items:center;color:#0b0d10;font-weight:800}
     .brand h1{font-size:18px;margin:0}
     .tag{font-size:12px;color:var(--muted)}
     .actions{display:flex;gap:10px;align-items:center}
     .btn{border:1px solid transparent;background:var(--brand);color:#fff;padding:10px 14px;border-radius:12px;font-weight:600;box-shadow:var(--shadow)}
     .btn.secondary{background:transparent;border-color:var(--brand);color:var(--brand)}
     .icon-btn{border:1px solid var(--chip);background:var(--panel);color:var(--text);width:40px;height:40px;border-radius:12px;display:grid;place-items:center}
-    .mobile-toggle{display:none}/* Hero */
-.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;margin-top:18px}
-.card{background:var(--panel);border:1px solid var(--chip);border-radius:20px;padding:22px;box-shadow:var(--shadow)}
-h2.section{margin:0 0 12px;font-size:20px}
-.summary{font-size:18px}
+    .mobile-toggle{display:none}
 
-/* Grid sections */
-.grid{display:grid;gap:18px}
-.grid-2{grid-template-columns:1fr 1fr}
-.grid-3{grid-template-columns:repeat(3,1fr)}
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;margin-top:18px}
+    .card{background:var(--panel);border:1px solid var(--chip);border-radius:20px;padding:22px;box-shadow:var(--shadow)}
+    h2.section{margin:0 0 12px;font-size:20px}
+    .summary{font-size:18px}
 
-/* Experience */
-.xp{display:grid;gap:14px}
-.xp-item{display:grid;gap:6px;padding:16px;border-radius:16px;border:1px solid var(--chip);background:linear-gradient(180deg,rgba(255,255,255,.01),transparent)}
-.xp-item h3{margin:0;font-size:17px}
-.xp-meta{font-size:13px;color:var(--muted)}
-.bullet{padding-left:18px; margin:6px 0}
+    /* Grid sections */
+    .grid{display:grid;gap:18px}
+    .grid-2{grid-template-columns:1fr 1fr}
+    .grid-3{grid-template-columns:repeat(3,1fr)}
 
-/* Chips */
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{background:var(--chip);border:1px solid rgba(255,255,255,.06);padding:8px 12px;border-radius:999px;font-size:14px}
+    /* Experience */
+    .xp{display:grid;gap:14px}
+    .xp-item{display:grid;gap:6px;padding:16px;border-radius:16px;border:1px solid var(--chip);background:linear-gradient(180deg,rgba(255,255,255,.01),transparent)}
+    .xp-item h3{margin:0;font-size:17px}
+    .xp-meta{font-size:13px;color:var(--muted)}
+    .bullet{padding-left:18px; margin:6px 0}
 
-/* Sidebar */
-.side .card{position:sticky;top:78px}
-.kv{display:grid;gap:8px}
-.kv div{display:flex;gap:10px;align-items:center}
+    /* Chips */
+    .chips{display:flex;flex-wrap:wrap;gap:8px}
+    .chip{background:var(--chip);border:1px solid rgba(255,255,255,.06);padding:8px 12px;border-radius:999px;font-size:14px}
 
-/* Footer */
-footer{margin:32px 0 24px;color:var(--muted);text-align:center;font-size:14px}
+    /* Sidebar */
+    .side .card{position:sticky;top:78px}
+    .kv{display:grid;gap:8px}
+    .kv div{display:flex;gap:10px;align-items:center}
 
-/* Responsive */
-@media (max-width: 900px){
-  .hero{grid-template-columns:1fr}
-  .side .card{position:static}
-  .grid-2{grid-template-columns:1fr}
-  .grid-3{grid-template-columns:1fr 1fr}
-  .mobile-toggle{display:inline-grid}
-  nav .links{display:none}
-  nav.open .links{display:grid;gap:8px;background:var(--panel);padding:12px;border:1px solid var(--chip);border-radius:12px;margin-top:10px}
-}
-@media (max-width: 560px){
-  .grid-3{grid-template-columns:1fr}
-}
+    /* Footer */
+    footer{margin:32px 0 24px;color:var(--muted);text-align:center;font-size:14px}
 
-/* Print */
-@media print{
-  header, .actions, .mobile-toggle, .icon-btn, .btn {display:none !important}
-  body{background:#fff;color:#000}
-  .card{box-shadow:none;border-color:#ddd}
-  a{color:#000}
-}
+    /* Responsive */
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr}
+      .side .card{position:static}
+      .grid-2{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:1fr 1fr}
+      .mobile-toggle{display:inline-grid}
+      nav .links{display:none}
+      nav.open .links{display:grid;gap:8px;background:var(--panel);padding:12px;border:1px solid var(--chip);border-radius:12px;margin-top:10px}
+    }
+    @media (max-width: 560px){
+      .grid-3{grid-template-columns:1fr}
+    }
 
+    /* Print */
+    @media print{
+      header, .actions, .mobile-toggle, .icon-btn, .btn {display:none !important}
+      body{background:#fff;color:#000}
+      .card{box-shadow:none;border-color:#ddd}
+      a{color:#000}
+    }
   </style>
 </head>
 <body>
@@ -112,7 +117,7 @@ footer{margin:32px 0 24px;color:var(--muted);text-align:center;font-size:14px}
     <div class="container nav" id="top-nav">
       <div class="brand">
         <div class="avatar">
-  <img src="Screenshot_20250817_102047_Instagram.jpg" alt="Shivangi Singh" style="width:100%;height:100%;border-radius:50%;object-fit:cover;">
+          <img src="Screenshot_20250817_102047_Instagram.jpg" alt="Shivangi Singh">
         </div>
         <div>
           <h1>Shivangi Singh</h1>
@@ -137,10 +142,13 @@ footer{margin:32px 0 24px;color:var(--muted);text-align:center;font-size:14px}
       </nav>
       <div class="actions">
         <button class="icon-btn" id="themeBtn" aria-label="Toggle theme" title="Toggle theme">🌓</button>
-        <button class="btn secondary" onclick="window.print()">Download PDF</button>
+        <a class="btn secondary" href="Shivangi Singh resumee.pdf" download>Download PDF</a>
       </div>
     </div>
-  </header>  <main class="container">
+  </header>
+
+  <main class="container">
+    <!-- About Section -->
     <section class="hero">
       <div class="card" id="about">
         <h2 class="section">About</h2>
@@ -164,92 +172,100 @@ footer{margin:32px 0 24px;color:var(--muted);text-align:center;font-size:14px}
           </div>
         </div>
       </aside>
-    </section><section class="card" id="experience" style="margin-top:18px">
-  <h2 class="section">Experience</h2>
-  <div class="xp">
-    <article class="xp-item" aria-labelledby="xp1-title">
-      <h3 id="xp1-title">Trust &amp; Safety Associate — Accenture</h3>
-      <div class="xp-meta">Jun 2022 – Present · Navi Mumbai</div>
-      <ul class="bullet">
-        <li>Reviewed data on SRT web application, adhering to guidelines and best practices.</li>
-        <li>Generated daily Excel-based reports and maintained detailed project activity records.</li>
-        <li>Maintained MTD trackers to calculate and manage production hours and deficits.</li>
-        <li>Resolved issues via query tool; collaborated with client to improve web app accuracy.</li>
-        <li>Implemented process improvements resulting in <strong>+10% productivity</strong> and <strong>−4% costs</strong>.</li>
-        <li>Presented solutions via PPT that were approved and adopted by the client.</li>
-        <li>Consistently achieved/exceeded SLA targets for both quality and quantity.</li>
-        <li>Awarded <strong>Best Performer</strong> for the current reviewing project.</li>
-      </ul>
-    </article>
+    </section>
 
-    <article class="xp-item" aria-labelledby="xp2-title">
-      <h3 id="xp2-title">CRM Head — Internship, THE MENTOR</h3>
-      <div class="xp-meta">May 2021 – Jul 2021 · Remote</div>
-      <ul class="bullet">
-        <li>Led and trained the CRM team; owned HubSpot as Trainer &amp; Head.</li>
-        <li>Supported Co‑Founder across cross‑functional initiatives and operations.</li>
-        <li>Coordinated with departments to ensure policy compliance and client satisfaction.</li>
-        <li>Managed hiring, orientations, and virtual meeting schedules.</li>
-      </ul>
-    </article>
-  </div>
-</section>
+    <!-- Experience Section -->
+    <section class="card" id="experience" style="margin-top:18px">
+      <h2 class="section">Experience</h2>
+      <div class="xp">
+        <article class="xp-item">
+          <h3>Trust &amp; Safety Associate — Accenture</h3>
+          <div class="xp-meta">Jun 2022 – Present · Navi Mumbai</div>
+          <ul class="bullet">
+            <li>Reviewed data on SRT web application, adhering to guidelines and best practices.</li>
+            <li>Generated daily Excel-based reports and maintained detailed project activity records.</li>
+            <li>Maintained MTD trackers to calculate and manage production hours and deficits.</li>
+            <li>Resolved issues via query tool; collaborated with client to improve web app accuracy.</li>
+            <li>Implemented process improvements resulting in <strong>+10% productivity</strong> and <strong>−4% costs</strong>.</li>
+            <li>Presented solutions via PPT that were approved and adopted by the client.</li>
+            <li>Consistently achieved/exceeded SLA targets for both quality and quantity.</li>
+            <li>Awarded <strong>Best Performer</strong> for the current reviewing project.</li>
+          </ul>
+        </article>
+        <article class="xp-item">
+          <h3>CRM Head — Internship, THE MENTOR</h3>
+          <div class="xp-meta">May 2021 – Jul 2021 · Remote</div>
+          <ul class="bullet">
+            <li>Led and trained the CRM team; owned HubSpot as Trainer &amp; Head.</li>
+            <li>Supported Co-Founder across cross-functional initiatives and operations.</li>
+            <li>Coordinated with departments to ensure policy compliance and client satisfaction.</li>
+            <li>Managed hiring, orientations, and virtual meeting schedules.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
 
-<section class="grid grid-2" style="margin-top:18px">
-  <div class="card" id="skills">
-    <h2 class="section">Skills &amp; Tools</h2>
-    <div class="chips">
-      <span class="chip">Microsoft Office</span>
-      <span class="chip">Excel (VLOOKUP)</span>
-      <span class="chip">Word</span>
-      <span class="chip">Data Analysis</span>
-      <span class="chip">Data Mining</span>
-      <span class="chip">Dashboard Creation</span>
-      <span class="chip">CRM</span>
-      <span class="chip">HubSpot</span>
-      <span class="chip">Quality Assurance</span>
-      <span class="chip">Conflict Resolution</span>
-      <span class="chip">Collaboration</span>
-      <span class="chip">Innovation &amp; Creativity</span>
-      <span class="chip">Accountability</span>
-      <span class="chip">Flexibility</span>
-    </div>
-  </div>
-  <div class="card" id="awards">
-    <h2 class="section">Certifications &amp; Awards</h2>
-    <ul class="bullet">
-      <li>MTST Certified – Certificate Course in Tax Expert (91.33%, A++ Grade)</li>
-      <li>Best Performer – Project Meta</li>
-      <li>Creativity Head – Team PDO</li>
-      <li>Best People Award (Supervisor recognition)</li>
-      <li>ISC 2019 Topper – Highest Percentage</li>
-      <li>International Talent Hunt Olympiad (NTS) – Silver Medalist</li>
-    </ul>
-  </div>
-</section>
+    <!-- Skills & Awards -->
+    <section class="grid grid-2" style="margin-top:18px">
+      <div class="card" id="skills">
+        <h2 class="section">Skills &amp; Tools</h2>
+        <div class="chips">
+          <span class="chip">Microsoft Office</span>
+          <span class="chip">Excel (VLOOKUP)</span>
+          <span class="chip">Word</span>
+          <span class="chip">Data Analysis</span>
+          <span class="chip">Data Mining</span>
+          <span class="chip">Dashboard Creation</span>
+          <span class="chip">CRM</span>
+          <span class="chip">HubSpot</span>
+          <span class="chip">Quality Assurance</span>
+          <span class="chip">Conflict Resolution</span>
+          <span class="chip">Collaboration</span>
+          <span class="chip">Innovation &amp; Creativity</span>
+          <span class="chip">Accountability</span>
+          <span class="chip">Flexibility</span>
+        </div>
+      </div>
+      <div class="card" id="awards">
+        <h2 class="section">Certifications &amp; Awards</h2>
+        <ul class="bullet">
+          <li>MTST Certified – Certificate Course in Tax Expert (91.33%, A++ Grade)</li>
+          <li>Best Performer – Project Meta</li>
+          <li>Creativity Head – Team PDO</li>
+          <li>Best People Award (Supervisor recognition)</li>
+          <li>ISC 2019 Topper – Highest Percentage</li>
+          <li>International Talent Hunt Olympiad (NTS) – Silver Medalist</li>
+        </ul>
+      </div>
+    </section>
 
-<section class="grid grid-2" style="margin-top:18px">
-  <div class="card" id="education">
-    <h2 class="section">Education</h2>
-    <ul class="bullet">
-      <li><strong>B.Com (Accounting &amp; Finance)</strong> – Pillai College of Arts, Commerce &amp; Science, Mumbai University (2022) · 90%</li>
-      <li><strong>HSC (ISC Board)</strong> – Seventh Days Adventist, Maharashtra (2019) · 87.5%</li>
-      <li><strong>CBSE 10th</strong> – Amrita Vidyalaya, Maharashtra (2017) · 85%</li>
-    </ul>
-  </div>
-  <div class="card" id="languages">
-    <h2 class="section">Languages</h2>
-    <div class="chips">
-      <span class="chip">English</span>
-      <span class="chip">Hindi</span>
-      <span class="chip">Marathi</span>
-    </div>
-  </div>
-</section>
+    <!-- Education & Languages -->
+    <section class="grid grid-2" style="margin-top:18px">
+      <div class="card" id="education">
+        <h2 class="section">Education</h2>
+        <ul class="bullet">
+          <li><strong>B.Com (Accounting &amp; Finance)</strong> – Pillai College of Arts, Commerce &amp; Science, Mumbai University (2022) · 90%</li>
+          <li><strong>HSC (ISC Board)</strong> – Seventh Days Adventist, Maharashtra (2019) · 87.5%</li>
+          <li><strong>CBSE 10th</strong> – Amrita Vidyalaya, Maharashtra (2017) · 85%</li>
+        </ul>
+      </div>
+      <div class="card" id="languages">
+        <h2 class="section">Languages</h2>
+        <div class="chips">
+          <span class="chip">English</span>
+          <span class="chip">Hindi</span>
+          <span class="chip">Marathi</span>
+        </div>
+      </div>
+    </section>
+  </main>
 
-  </main>  <footer>
+  <footer>
     <div class="container">© <span id="year"></span> Shivangi Singh · Portfolio</div>
-  </footer>  <!-- Structured data for SEO -->  <script type="application/ld+json">
+  </footer>
+
+  <!-- Structured data for SEO -->
+  <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Person",
@@ -261,14 +277,12 @@ footer{margin:32px 0 24px;color:var(--muted);text-align:center;font-size:14px}
       "skills": ["Process Optimization","Quality Assurance","Data Analysis","HubSpot CRM"],
       "alumniOf": "Mumbai University"
     }
-  </script>  <script>
-    // Mobile menu toggle
-    function toggleMenu(){
-      const headerNav = document.querySelector('nav#nav');
-      headerNav.classList.toggle('open');
-    }
+  </script>
 
-    // Theme toggle (light/dark)
+  <script>
+    function toggleMenu(){
+      document.querySelector('nav#nav').classList.toggle('open');
+    }
     const themeBtn = document.getElementById('themeBtn');
     const userPrefKey = 'shivangi-theme';
     function applyTheme(mode){
@@ -294,18 +308,17 @@ footer{margin:32px 0 24px;color:var(--muted);text-align:center;font-size:14px}
         document.documentElement.style.setProperty('--shadow','0 10px 30px rgba(0,0,0,.35)');
       }
     }
-    // Initialize theme
     (function(){
       const pref = localStorage.getItem(userPrefKey);
       if(pref){ applyTheme(pref); }
       document.getElementById('year').textContent = new Date().getFullYear();
     })();
-
     themeBtn.addEventListener('click', () => {
       const current = getComputedStyle(document.documentElement).getPropertyValue('--bg').trim();
       const next = (current === '#0b0d10') ? 'light' : 'dark';
       applyTheme(next);
       localStorage.setItem(userPrefKey, next);
     });
-  </script></body>
+  </script>
+</body>
   </html>
